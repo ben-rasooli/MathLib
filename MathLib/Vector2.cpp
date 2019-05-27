@@ -71,9 +71,43 @@ Vector2 Vector2::lerp(Vector2 startPoint, Vector2 endPoint, float percent)
 	return startPoint + offset;
 }
 
+float Vector2::angle(Vector2 from, Vector2 to)
+{
+	return acosf(from.dot(to) / (from.magnitude() * to.magnitude()));
+}
+
 Vector2 Vector2::zero()
 {
 	return Vector2(0, 0);
+}
+
+Vector2 Vector2::swizzle(char x, char y)
+{
+	Vector2 result;
+
+	// x component
+	switch (x)
+	{
+	default:
+		result.x = x;
+		break;
+	case 'y':
+		result.x = y;
+		break;
+	}
+
+	// y component
+	switch (x)
+	{
+	default:
+		result.y = y;
+		break;
+	case 'x':
+		result.y = x;
+		break;
+	}
+
+	return result;
 }
 
 Vector2 Vector2::operator+(Vector2& other)
@@ -130,4 +164,9 @@ float& Vector2::operator[](int index)
 Vector2::operator float*()
 {
 	return (float*)this;
+}
+
+Vector2::operator Vector3()
+{
+	return Vector3(x, y, 0);
 }

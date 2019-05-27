@@ -3,7 +3,6 @@
 #include <cmath>
 #include <cassert>
 
-
 Vector4::Vector4()
 {
 	x = 0;
@@ -66,6 +65,11 @@ Vector4 Vector4::cross(const Vector4& other)
 	result.w = 0;
 
 	return result;
+}
+
+float Vector4::angle(Vector4 from, Vector4 to)
+{
+	return acosf(from.dot(to) / (from.magnitude() * to.magnitude()));
 }
 
 Vector4 Vector4::operator+(Vector4 & other)

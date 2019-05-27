@@ -90,9 +90,9 @@ Vector3 Matrix4::getRotation()
 {
 	Vector3 result;
 
-	result.x = atan2(m[6], m[10]);
+	/*result.x = atan2(m[6], m[10]);
 	result.y = atan2(-m[2], sqrtf(powf(m[6], 2) + powf(m[10], 2)));
-	result.z = atan2(m[1], m[0]);
+	result.z = atan2(m[1], m[0]);*/
 
 	return result;
 }
