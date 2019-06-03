@@ -46,6 +46,17 @@ void Matrix3::setRotateZ(float radians)
 	/*-------*//*-------*//*-------*/
 }
 
+void Matrix3::setRotateZ(Vector2 forward)
+{
+	// x/right axis
+	m[0] = forward.right().x;
+	m[1] = forward.right().y;
+
+	// y/forward axis
+	m[3] = forward.x;
+	m[4] = forward.y;
+}
+
 void Matrix3::setPosition(float x, float y)
 {
 	/*------*//*------*/ m[6] = x;
