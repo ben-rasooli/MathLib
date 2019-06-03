@@ -57,12 +57,12 @@ float Vector2::dot(Vector2& other)
 
 Vector2 Vector2::right()
 {
-	return Vector2(-y, x);
+	return Vector2(y, -x);
 }
 
 Vector2 Vector2::left()
 {
-	return Vector2(y, -x);
+	return Vector2(-y, x);
 }
 
 Vector2 Vector2::lerp(Vector2 startPoint, Vector2 endPoint, float percent)
